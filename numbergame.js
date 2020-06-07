@@ -6,7 +6,8 @@ function generate(number) {
 function userGuess() {
     var guess;
     var number = generate();
-        while (guess != number) {
+    var numGuess = 0;
+        while (guess != number && numGuess < 3) {
         guess = window.prompt("What is the number?: ");
         if (guess < number) {
             alert("higher");
@@ -14,6 +15,11 @@ function userGuess() {
         if (guess > number) {
             alert("lower");
         }
+        numGuess ++;
     }
     alert ("Congratulations! You have successfully guessed the number");
 }
+window.addEventListener("load",function(){
+    document.getElementById("start").addEventListener("click", userGuess);
+});
+
