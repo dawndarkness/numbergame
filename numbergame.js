@@ -1,16 +1,19 @@
 function generate(number) {
    var number =  Math.floor((Math.random() * 500) + 1);
+   return number;
 }
 
-var userGuess = window.prompt("What is the number?: ");
-
 function userGuess() {
-    while (userGuess != number) {
-        if (userGuess < number) alert ("higher");
-        userGuess = window.prompt("What is your next guess?: ");
-        if (userGuess > number) return ("lower");
-        userGuess = window.prompt("Can you get any hotter?: ");
-        break;
-    if (userGuess === number) alert ("Congratulations! You have successfully guessed the number");
+    var guess;
+    var number = generate();
+        while (guess != number) {
+        guess = window.prompt("What is the number?: ");
+        if (guess < number) {
+            alert("higher");
+        }
+        if (guess > number) {
+            alert("lower");
+        }
     }
+    alert ("Congratulations! You have successfully guessed the number");
 }
