@@ -10,7 +10,7 @@ function userGuess() {
     var maxGuess = 20;
         while (guess != number && numGuess < maxGuess) {
             var remaining = maxGuess - numGuess;
-        guess = window.prompt("What is the number? You have "+ remaining +" guesses remaining.");
+        guess = window.prompt(`What is the number? You have ${remaining} guesses remaining.`);
         if (guess < number) {
             alert("higher");
         }
@@ -20,7 +20,7 @@ function userGuess() {
         numGuess ++;    
     }
     if (guess == number) {
-        alert("Congratulations! You have successfully guessed the number in "+numGuess+"guesses!");
+        alert(`Congratulations! You have successfully guessed the number in ${numGuess} guesses!`);
     }
     else {
         alert("You suck");
