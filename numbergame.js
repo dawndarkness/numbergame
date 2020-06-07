@@ -7,19 +7,24 @@ function userGuess() {
     var guess;
     var number = generate();
     var numGuess = 0;
-        while (guess != number && numGuess < 3) {
-        guess = window.prompt("What is the number?: ");
+    var maxGuess = 20;
+        while (guess != number && numGuess < maxGuess) {
+            var remaining = maxGuess - numGuess;
+        guess = window.prompt("What is the number? You have "+ remaining +" guesses remaining.");
         if (guess < number) {
             alert("higher");
         }
         if (guess > number) {
             alert("lower");
         }
-        numGuess ++;
+        numGuess ++;    
     }
-    alert ("Congratulations! You have successfully guessed the number");
+    if (guess == number) {
+        alert("Congratulations! You have successfully guessed the number in "+numGuess+"guesses!");
+    }
+    else {
+        alert("You suck");
+    }  
 }
 window.addEventListener("load",function(){
     document.getElementById("start").addEventListener("click", userGuess);
-});
-
